@@ -18,4 +18,4 @@ data = response.json()
 
 print(data["message"]["content"])
 print()
-print(response)
+print(data)
