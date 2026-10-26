@@ -20,7 +20,9 @@ completion = client.chat.completions.create(
             "role" : "user",
             "content" : "What are you for"
         }
-    ]
+    ],
+    stream=True
 )
 
-print(completion.choices[0].message.content)
+for words in completion:
+    print(words.choices[0].delta.content,end="" , flush=True)
