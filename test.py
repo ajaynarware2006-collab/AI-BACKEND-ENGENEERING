@@ -11,18 +11,24 @@ client = OpenAI(
     api_key=api_key,
 )
 
-completion = client.chat.completions.create(
+while True:
 
-    extra_body={},
-    model="nvidia/nemotron-3-ultra-550b-a55b:free",
-    messages=[
-        {
-            "role" : "user",
-            "content" : "What are you for"
-        }
-    ],
-    stream=True
-)
+    userinput = input("\nYou : ")
+    if userinput.lower() == "exit":
+        break
+    completion = client.chat.completions.create(
 
-for words in completion:
-    print(words.choices[0].delta.content,end="" , flush=True)
+        extra_body={},
+        model="nvidia/nemotron-3-ultra-550b-a55b:free",
+        messages=[
+            {
+                "role" : "user",
+                "content" : f"{userinput}"
+            }
+        ],
+        stream=True
+    )
+    print("Bot : ",end="")
+    for words in completion:
+        
+        print(words.choices[0].delta.content,end="" , flush=True)
