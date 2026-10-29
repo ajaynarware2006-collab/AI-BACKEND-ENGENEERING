@@ -7,7 +7,7 @@ response = requests.post(
         "messages": [
             {
                 "role": "user",
-                "content": "Explain Python functions in simple words with one example."
+                "content": "hello."
             }
         ],
         "stream": False

@@ -13,7 +13,7 @@ client = genai.Client(api_key=API_KEY)
 
 response = client.models.generate_content(
     model="gemini-3.8-flash",
-    contents="Eplain Python function in simple words with one example."
+    contents="hello."
 )
 
 print(response.text)

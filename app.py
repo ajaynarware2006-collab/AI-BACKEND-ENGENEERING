@@ -32,7 +32,7 @@ while True:
 
         # Exit command
         if userinput.lower() in ("exit", "quit"):
-            print("Bot: Goodbye!")
+            print("Bot: See you later!")
             break
 
         # Handle empty input
